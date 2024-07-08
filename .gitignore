@@ -1,0 +1,15 @@
+# Ignore Visual Studio temporary files, build results, and
+# build logs.
+*.log
+*.user
+*.userosscache
+*.sln.docstates
+
+# Avoid ignoring files in subdir named "lib"
+!lib/
+
+# Avoid ignoring docs in subdir named "doc"
+!doc/
+
+# Ignore all .vs folders
+.vs/

@@ -1,0 +1,9 @@
+@KieSystem_HostAddress = http://localhost:5156
+
+GET {{KieSystem_HostAddress}}/weatherforecast/
+Accept: application/json
+
+GET {{KieSystem_HostAddress}}/getBlog/
+Accept: application/json
+
+###
