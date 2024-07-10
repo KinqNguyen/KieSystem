@@ -1,5 +1,7 @@
 ﻿using KieSystem.DTOs;
 using Microsoft.AspNetCore.Mvc;
+using NPOI.SS.UserModel;
+using NPOI.XSSF.UserModel;
 using System.Collections.Generic;
 
 namespace KieSystem.Controllers
@@ -36,7 +38,29 @@ namespace KieSystem.Controllers
             }
             return list;
         }
+        [HttpGet("export",Name = "export")]
+        public IActionResult ExportExcel()
+        {
+            var data = autogenerate(188);
+            IWorkbook workbook = new XSSFWorkbook();
+            ISheet sheet = workbook.CreateSheet("sheetTaolao1");
+
+            using (var stream = new MemoryStream())
+            {
+                workbook.Write(stream);
+                var content = stream.ToArray();
+
+                var result = new FileContentResult(content, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+                {
+                    FileDownloadName = "SampleData.xlsx"
+                };
+
+                return result;
+            }
+        }
+
     }
+
 
 
 }

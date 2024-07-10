@@ -1,3 +1,4 @@
+using KieSystem.DTOs;
 using Microsoft.AspNetCore.Mvc;
 
 namespace KieSystem.Controllers
