@@ -1,6 +1,8 @@
 ﻿using KieSystem.DTOs;
 using Microsoft.AspNetCore.Mvc;
+using NPOI.SS.Formula.Functions;
 using NPOI.SS.UserModel;
+using NPOI.SS.Util;
 using NPOI.XSSF.UserModel;
 using System.Collections.Generic;
 
@@ -44,6 +46,19 @@ namespace KieSystem.Controllers
             var data = autogenerate(188);
             IWorkbook workbook = new XSSFWorkbook();
             ISheet sheet = workbook.CreateSheet("sheetTaolao1");
+            
+            // Header
+            IRow titleRow = sheet.CreateRow(0);
+            ICell titleCell = titleRow.CreateCell(0);
+            titleCell.SetCellValue("Title đầu tiên");
+            CellRangeAddress cellRangeAddress = new CellRangeAddress(0,0,0,3);
+            sheet.AddMergedRegion(cellRangeAddress);
+
+            //Column Title
+            IRow headerRow = sheet.CreateRow(titleRow.RowNum + 1);
+
+
+            //Row-Cell
 
             using (var stream = new MemoryStream())
             {
@@ -52,7 +67,7 @@ namespace KieSystem.Controllers
 
                 var result = new FileContentResult(content, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
                 {
-                    FileDownloadName = "SampleData.xlsx"
+                    FileDownloadName = "Demo.xlsx"
                 };
 
                 return result;
