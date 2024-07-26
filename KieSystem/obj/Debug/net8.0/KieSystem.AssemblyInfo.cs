@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KieSystem")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b6c630c854e689570060a7beb4c0164f2417fa6d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+14e7defcc495ab0b661c85913200e355c1cb5b57")]
 [assembly: System.Reflection.AssemblyProductAttribute("KieSystem")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KieSystem")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
