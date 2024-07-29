@@ -4,7 +4,7 @@ namespace KieSystem.DTOs
 {
     public class ExportExcelDTO
     {
-        public GeneralFormat generalInfo { get; set; } = new ExportExcelDTO();
+        public GeneralFormat generalInfo { get; set; } = new GeneralFormat();
         public List<ExcelColumn> columns { get; set; } = new List<ExcelColumn>();
         public List<ExcelRow<T>> Rows { get; set; } = new List<ExcelRow<T>> { };    
     }
