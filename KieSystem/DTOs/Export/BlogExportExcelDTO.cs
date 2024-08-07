@@ -5,10 +5,14 @@ namespace KieSystem.DTOs
     public class ExportExcelDTO
     {
         public GeneralFormat generalInfo { get; set; } = new GeneralFormat();
-        public List<ExcelColumn> columns { get; set; } = new List<ExcelColumn>();
-        public List<ExcelRow<T>> Rows { get; set; } = new List<ExcelRow<T>> { };    
+
     }
 
+    public class SimpleExportDto
+    {
+        public List<string> ColumnExport { get; set; }
+        public string HeaderTitle { get; set; }
+    }
 
     public class ExcelRow<T>
     {
@@ -27,12 +31,39 @@ namespace KieSystem.DTOs
 
     public class GeneralFormat
     {
-        public bool isAlternate { get; set; }
-        public GeneralFormat()
-        {
-            isAlternate = false;
-        }
+        public string FileName { get; set; }
+        public HeaderTitle HeaderTitle { get; set; }
+        public Alternate Alternate { get; set; }
+        public int PriorityColor { get; set; }
+        public List<string> ColumnExport { get; set; }
 
+    }
+
+    public class HeaderTitle
+    {
+        public string HeaderName { get; set; }
+        public Font Font { get; set; }
+        public string Color { get; set; }
+        public Merge Merge { get; set; }
+    }
+
+    public class Font
+    {
+        public bool Bold { get; set; }
+        public bool Underline { get; set; }
+        public bool Italic { get; set; }
+    }
+
+    public class Merge
+    {
+        public bool Enable { get; set; }
+        public int Count { get; set; }
+    }
+
+    public class Alternate
+    {
+        public bool Enable { get; set; }
+        public string Color { get; set; }
     }
 
 }
